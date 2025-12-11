@@ -81,7 +81,7 @@
         // HOME ROW MODS
         hml: left_hand_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "LEFT_POSITIONAL_HOLD_TAP";
+            name = "LEFT_POSITIONAL_HOLD_TAP";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <TAP_TERM_MS>;
@@ -94,7 +94,7 @@
 
         hmr: right_hand_positional_hold_tap {
             compatible = "zmk,behavior-hold-tap";
-            label = "RIGHT_POSITIONAL_HOLD_TAP";
+            name = "RIGHT_POSITIONAL_HOLD_TAP";
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <TAP_TERM_MS>;
@@ -108,21 +108,21 @@
         // TAP DANCES
         eurodollar: tap_dance_euro_dollar {
             compatible = "zmk,behavior-tap-dance";
-            label = "TAP_DANCE_EURO_DOLLAR";
+            name = "TAP_DANCE_EURO_DOLLAR";
             #binding-cells = <0>;
             tapping-term-ms = <TAP_TERM_MS>;
             bindings = <&kp DLLR>, <&kp LA(N5)>;
         };
         prev_next_song: prev_next_song {
             compatible = "zmk,behavior-tap-dance";
-            label = "PREV_NEXT_SONG";
+            name = "PREV_NEXT_SONG";
             #binding-cells = <0>;
             tapping-term-ms = <TAP_TERM_MS>;
             bindings = <&kp C_NEXT>, <&kp C_PREV>;
         };
         screenshot: screenshot { // single-tap: area selector, double-tap: full-screen
             compatible = "zmk,behavior-tap-dance";
-            label = "SCREENSHOT";
+            name = "SCREENSHOT";
             #binding-cells = <0>;
             tapping-term-ms = <TAP_TERM_MS>;
             bindings = <&kp LG(LS(NUMBER_4))>, <&kp LG(LS(NUMBER_3))>;
@@ -131,14 +131,14 @@
         // tap: sticky-shift | lshft + tap: caps-word | hold: set in keymap (HYPER)
         ss_cw: ss_cw {
             compatible = "zmk,behavior-mod-morph";
-            label = "SS_CW";
+            name = "SS_CW";
             #binding-cells = <0>;
             bindings = <&sk LSHFT>, <&caps_word>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         lt_shft: lt_shft {
             compatible = "zmk,behavior-hold-tap";
-            label = "LT_SHFT";
+            name = "LT_SHFT";
             #binding-cells = <2>;
             tapping-term-ms = <TAP_TERM_MS>;
             quick-tap-ms = <QUICK_TAP_MS>;
@@ -149,14 +149,14 @@
         // tap: space | shft + tap: dot -> space -> sticky shift | hold: activate layer
         spc_morph: spc_morph {
             compatible = "zmk,behavior-mod-morph";
-            label = "SPC_MORPH";
+            name = "SPC_MORPH";
             #binding-cells = <0>;
             bindings = <&kp SPACE>, <&dot_spc>;
             mods = <(MOD_LSFT)>;
         };
         lt_spc: lt_spc {
             compatible = "zmk,behavior-hold-tap";
-            label = "LT_SPC";
+            name = "LT_SPC";
             #binding-cells = <2>;
             tapping-term-ms = <TAP_TERM_MS>;
             quick-tap-ms = <QUICK_TAP_MS>;
@@ -167,7 +167,7 @@
         // Alt+Tab swapper, requires PR #1366
         swapper: swapper{
             compatible = "zmk,behavior-tri-state";
-            label = "SWAPPER";
+            name = "SWAPPER";
             #binding-cells = <0>;
             bindings = <&kt LGUI>, <&kp TAB>, <&kt LGUI>;
             ignored-key-positions = <31>; // the key being held for the layer activation
@@ -176,7 +176,7 @@
         //usefull mod-morphs
         colon_semi: colon_semi {
             compatible = "zmk,behavior-mod-morph";
-            label = "COLON_TO_SEMICOLON";
+            name = "COLON_TO_SEMICOLON";
             #binding-cells = <0>;
             bindings = <&kp COLON>, <&kp SEMICOLON>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -184,28 +184,28 @@
 				
         comma_lt: comma_lt {
             compatible = "zmk,behavior-mod-morph";
-            label = "COMMA_TO_LESSTHAN";
+            name = "COMMA_TO_LESSTHAN";
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp LT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         dot_gt: dot_gt {
             compatible = "zmk,behavior-mod-morph";
-            label = "DOT_TO_GREATERTHAN";
+            name = "DOT_TO_GREATERTHAN";
             #binding-cells = <0>;
             bindings = <&kp DOT>, <&kp GT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         sqt_dqt: sqt_dqt {
             compatible = "zmk,behavior-mod-morph";
-            label = "SINGLE_TO_DOUBLEQUOTE";
+            name = "SINGLE_TO_DOUBLEQUOTE";
             #binding-cells = <0>;
             bindings = <&kp SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
         single_to_doublequote: single_to_doublequote {
             compatible = "zmk,behavior-mod-morph";
-            label = "SINGLE_TO_DOUBLEQUOTE";
+            name = "SINGLE_TO_DOUBLEQUOTE";
             #binding-cells = <0>;
             bindings = <&kp SINGLE_QUOTE>, <&kp DOUBLE_QUOTES>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -215,7 +215,7 @@
     // macros
     macros {
         sel_word: select_word {
-            label = "ZM_SELECT_WORD";
+            name = "ZM_SELECT_WORD";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings
@@ -228,7 +228,7 @@
         };
 
         dot_spc: dot_spc{
-            label = "ZM_DOT_SPACE";
+            name = "ZM_DOT_SPACE";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
@@ -238,7 +238,7 @@
 
         // Windows sleep key (fix LOCK not working on Windows)
         win_sleep: win_sleep{
-            label = "ZM_WIN_SLEEP";
+            name = "ZM_WIN_SLEEP";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <100>;
@@ -248,7 +248,7 @@
 
         #if WIRELESS
         pc_connect: pc_connect{
-            label = "ZM_PC_CONNECT";
+            name = "ZM_PC_CONNECT";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <100>;
@@ -256,7 +256,7 @@
             bindings = <&bt BT_SEL 1 &to BASE>;
         };
         osx_connect: osx_connect{
-            label = "ZM_PC_CONNECT";
+            name = "ZM_PC_CONNECT";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <100>;
@@ -266,7 +266,7 @@
         #endif
 
         macro_par: macro_par{
-            label = "ZM_PAR";
+            name = "ZM_PAR";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
@@ -274,7 +274,7 @@
             bindings = <&kp LPAR &kp RPAR &kp LEFT>;
         };
         macro_bkt: macro_bkt{
-            label = "ZM_BKT";
+            name = "ZM_BKT";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
@@ -282,7 +282,7 @@
             bindings = <&kp LBKT &kp RBKT &kp LEFT>;
         };
         macro_brc: macro_brc{
-            label = "ZM_BRC";
+            name = "ZM_BRC";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
@@ -290,7 +290,7 @@
             bindings = <&kp LBRC &kp RBRC &kp LEFT>;
         };
         macro_deg_win: macro_deg_win{
-            label = "ZM_DEG";
+            name = "ZM_DEG";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             wait-ms = <0>;
@@ -315,7 +315,7 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            label = "APTMAK";
+            name = "APTMAK";
             bindings = <
              //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
                 &kp Q          &kp D          &kp R          &kp W          &kp B                &kp J          &kp F          &kp U          &kp P          &colon_semi
@@ -330,7 +330,7 @@
         };
 
         nav_layer{
-            label = "NAV";
+            name = "NAV";
             bindings = <
              //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
                 &kp LA(F4)     ___            &kp LG(Q)      &kp LG(W)      ___                  ___            &kp PG_DN      &kp UP         &kp PG_UP      ___
@@ -345,7 +345,7 @@
         };
 
         symbols {
-            label = "SYM";
+            name = "SYM";
             bindings = <
              //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
                 ___            &kp AT         &kp HASH       &kp DOLLAR     &kp PERCENT          &kp CARET      &kp PLUS       &kp ASTRK      &kp AMPS       ___
@@ -360,7 +360,7 @@
         };
 
         num_layer{
-            label = "NUM";
+            name = "NUM";
             bindings = <
              //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
                 &kp F12        &kp F7         &kp F8         &kp F9         ___                  &kp KP_PLUS    &kp KP_N7      &kp KP_N8      &kp KP_N9      &kp KP_DIVIDE
@@ -375,7 +375,7 @@
         };
 
         adj_layer {
-            label = "ADJ";
+            name = "ADJ";
             bindings = <
              //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
                 ___            ___            &to 0          &to BASE       &bootloader          &bootloader    &kp C_PREV     &kp C_PP       &kp C_NEXT     ___
@@ -390,7 +390,7 @@
         };
 
         lock_layer {
-            label = "LOCK";
+            name = "LOCK";
             bindings = <
              //╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮     ╭──────────────┬──────────────┬──────────────┬──────────────┬──────────────╮
                 ___            ___            ___            ___            ___                  ___            ___            ___            ___            ___
